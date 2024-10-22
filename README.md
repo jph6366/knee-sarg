@@ -99,7 +99,7 @@ A Dagster sensor checks that file every 30 seconds and kicks off this automatic 
 2. Asset OAI patient data is copied to `FILE_STORAGE_ROOT/staged`
 3. A sensor checks every 30 seconds for new folders of studies `staged` and starts the ingest_and_analyze_study job and creates a `study_uid` partition.
 4. ingest_study asset copies the study files to `FILE_STORAGE_ROOT/ingested`
-5. The cartilage_thickness asset runs the OAI_analysis_2 pipeline via SSH and copies the output files into `FILE_STORAGE_ROOT/collections`
+5. The cartilage_thickness asset runs the OAI_analysis_2 pipeline and copies the output files into `FILE_STORAGE_ROOT/collections`
 
 #### Rerun Cartilage Thickness Pipeline
 
