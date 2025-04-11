@@ -5,6 +5,7 @@ authors = [{ name = "Matt McCormick" }]
 dependencies = [
     "dagster-dbt>=0.25.4",
     "dagster-duckdb-polars>=0.25.3",
+    "polars<0.19.6",
     "dagster-duckdb",
     "dagster>=1.9,<2.0",
     "dagster-ssh",
@@ -71,7 +72,7 @@ jupyter = { cmd = "python scripts/start_jupyter.py", description = "Run jupyter 
 collect-images = { cmd = "dagster asset materialize --select collected_images_oai -m knee_sarg", description = "Materialize collected_images asset" }
 
 [tool.pixi.feature.dev.tasks]
-dev = { cmd = "dagster dev", description = "Run the development environment" }
+dev = { cmd = "dagster dev -v", description = "Run the development environment" }
 lint = { cmd = "ruff check .", description = "Run ruff to check linting issues" }
 fix = { cmd = "ruff check . --fix", description = "Run ruff to fix linting issues" }
 format = { cmd = "ruff format", description = "Run ruff to format code" }
